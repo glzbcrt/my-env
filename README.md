@@ -64,6 +64,7 @@ winget install Google.GoogleDrive
 winget install Microsoft.PowerToys
 winget install Audacity.Audacity
 winget install SweetScape.010Editor
+winget install GIMP.GIMP
 
 # Best video player PERIOD
 winget install VideoLAN.VLC

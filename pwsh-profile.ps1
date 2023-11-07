@@ -9,7 +9,7 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 
 # Start Oh My Posh.
-oh-my-posh prompt init pwsh --config "$env:MY_SETTINGS\ohmyposh.json" | Invoke-Expression
+oh-my-posh prompt init pwsh --config "$env:MY_ENV\ohmyposh.json" | Invoke-Expression
 
 # Define some aliases for common tools and commands.
 Set-Alias -Name he -Value helm
@@ -28,7 +28,7 @@ Function gcl {
     param(
         [string] $Url
     )
-	git clone $Url
+    git clone $Url
 }
 
 # Return Git status.
@@ -41,7 +41,7 @@ Function kaf {
     param(
         [string] $File
     )
-	k apply -f $File
+    k apply -f $File
 }
 
 # Get all pods in all namespaces or in the specified namespace.
@@ -52,7 +52,8 @@ Function kgp {
 
     if ($Namespace -eq $null) {
         k get pods -A
-    } else {
+    }
+    else {
         k get pods -n $Namespace
     }
 }
@@ -63,7 +64,7 @@ Function kgd {
         [string] $Deployment,
         [string] $Namespace = "default"
     )
-	k get deployment -n $Namespace $Deployment
+    k get deployment -n $Namespace $Deployment
 }
 
 

@@ -15,7 +15,7 @@ call :create-link "%USERPROFILE%\Documents\PowerShell\Microsoft.PowerShell_profi
 echo.
 
 rem used by PowerShell profile to load Oh My Posh later.
-setx MY_SETTINGS %CD%
+setx MY_ENV %CD%
 
 echo - installing PowerShell...
 winget install Microsoft.PowerShell
