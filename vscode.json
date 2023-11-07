@@ -1,0 +1,52 @@
+{
+    "workbench.colorTheme": "GitHub Light",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font'",
+    "editor.cursorStyle": "block",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.enablePreview": false,
+    "editor.formatOnPaste": true,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDelete": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "notebook.output.scrolling": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    "vsicons.dontShowNewVersionMessage": true,
+    "git.autofetch": true,
+    "workbench.startupEditor": "none",
+    "editor.formatOnSave": true,
+    "githubIssues.queries": [
+        {
+            "label": "My Issues",
+            "query": "default"
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        },
+        {
+            "label": "Recent Issues",
+            "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+        }
+    ],
+    "workbench.iconTheme": "vscode-icons"
+}
