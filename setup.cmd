@@ -3,7 +3,7 @@
 net session 1>NUL 2>NUL || (echo This script requires elevated rights. & exit /b 1)
 
 echo.
-echo my-settings setup script
+echo my-env setup script
 echo.
 
 echo - windows terminal symlink...
