@@ -1,0 +1,14 @@
+<Configuration>
+    <VGpu>Disable</VGpu>
+    <Networking>Enable</Networking>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>C:\Users\glzbcrt\Downloads</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Downloads</SandboxFolder>
+            <ReadOnly>true</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
+    <LogonCommand>
+        <Command>explorer.exe C:\Users\WDAGUtilityAccount\Downloads</Command>
+    </LogonCommand>
+</Configuration>
