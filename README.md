@@ -26,6 +26,22 @@ To install, follow these steps:
 4. Execute **setup.cmd**. It will create some symlinks to point the tools to this repo.
 5. Follow the remaining sections here to install and configure the tools.
 
+## Windows Features
+
+The Windows features below are the **only** ones I have enabled.
+
+- Containers
+- Hyper-V
+- Microsoft Print to PDF
+- Print and Document Services
+- Remote Differential Compression API Support
+- SMB Direct
+- Telnet Client
+- Virtual Machine Platform
+- Windows Hypervisor Platform
+- Windows Sandbox (take a look at the _downloads.wsb_ file for a sample sandbox)
+- Windows Subsystem for Linux
+
 ## Winget
 
 I use [winget](https://github.com/microsoft/winget-cli) to install most of my applications. Below, you can find the ones I use formatted as command line ready for use. They are  grouped by subject.
