@@ -81,6 +81,7 @@ winget install Microsoft.PowerToys
 winget install Audacity.Audacity
 winget install SweetScape.010Editor
 winget install GIMP.GIMP
+winget install JGraph.Draw
 
 # Best video player PERIOD
 winget install VideoLAN.VLC
