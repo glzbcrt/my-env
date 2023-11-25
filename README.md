@@ -190,6 +190,22 @@ I customized it based on a template I liked and added several segments to provid
 3. Python version and environment will be shown as well.
 4. The Git integration is fantastic. It will show my current branch, the difference between local and remote clones, etc.
 
+## Environment Variables
+
+These are the environment variables I have defined to customize my environment.
+
+| Env Var                   | Content                                                       | Description                                                                    |
+|:-------------------------:|---------------------------------------------------------------|--------------------------------------------------------------------------------|
+|HF_DATASETS_CACHE          |datasets dir path                                            |Directory where the Hugging Face datasets lib will save the downloaded datasets.|
+
+## Bash functions
+
+I have developed the functions below to facilitate my work. I will add more functions as needed. You can find their source code [here](./bash-functions.sh).
+Simply load this file from your [.bashrc](<https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html>) file.
+
+1. pinfo
+2. cinfo
+
 ## PowerShell
 
 PowerShell is my official shell (I am still thinking if I will adopt it in Linux instead of bash/zsh), and it is amazing to see how it evolved. With PowerShell Core it is possible to use it in Linux, too! :)
