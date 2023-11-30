@@ -96,11 +96,16 @@ winget install 9PKR34TNCV07
 # CLI to manage the best cloud! :)
 winget install Microsoft.AzureCLI
 
+# Who doesn't love low level stuff?
+winget install Microsoft.WinDbg
+winget install Hex-Rays.IDA.Free
+
 # General Developer Tools
 winget install DBBrowserForSQLite.DBBrowserForSQLite
 winget install BurntSushi.ripgrep.MSVC
 winget install Docker.DockerDesktop
 winget install Microsoft.VisualStudio.2022.Community --override "--quiet --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat"
+winget install Kitware.CMake
 
 # .NET development.
 winget install Microsoft.DotNet.SDK.7
@@ -194,9 +199,26 @@ I customized it based on a template I liked and added several segments to provid
 
 These are the environment variables I have defined to customize my environment.
 
-| Env Var                   | Content                                                       | Description                                                                    |
-|:-------------------------:|---------------------------------------------------------------|--------------------------------------------------------------------------------|
-|HF_DATASETS_CACHE          |datasets dir path                                            |Directory where the Hugging Face datasets lib will save the downloaded datasets.|
+| Env Var                   | Content                                                       | Description                                                                              |
+|:-------------------------:|---------------------------------------------------------------|------------------------------------------------------------------------------------------|
+|HF_DATASETS_CACHE          |datasets dir path                                              |Directory where the Hugging Face datasets lib will save the downloaded datasets.          |
+|_NT_SYMBOL_PATH            |check the section *Debugging Symbols*                          |Path where tools like WinDbg, and NVIDIA Nsight can find debugging symbols on Windows.    |
+
+## Debugging Symbols
+
+I love debugging, and all the low level stuff we need to know to do that. For a successfully debugging session we need the debugging symbols (PDB files on Windows) generated during the build process. Microsoft publishes symbols for their software, and other companies are also doing that.
+
+To use these symbols we must define the symbol path. This path is like a PATH on Windows or Linux, which is a list of paths where the symbols can be found. Below I am documenting the ones I am using.
+
+1. [Microsoft](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/microsoft-public-symbols)
+2. [NVIDIA](https://developer.nvidia.com/nvidia-driver-symbol-server)
+2. [Python](https://learn.microsoft.com/en-us/visualstudio/python/debugging-symbols-for-mixed-mode-c-cpp-python?view=vs-2022#download-symbols)
+
+From all these symbols stores, my final symbol path is:
+
+```
+C:\dev\python\311\DLLs;C:\dev\python\311;srv*D:\symbols*https://msdl.microsoft.com/download/symbols*https://driver-symbols.nvidia.com
+```
 
 ## Bash functions
 
@@ -238,6 +260,7 @@ You can find my customized profile [here](./pwsh-profile.ps1). The customization
 |kgd        |k get deployment -n <namespace> <deployment>                   |
 |gcoph      |git add -A; git commit -m <message>; git push                  |
 |kcreds     |az aks get-credentials <resourceGroup> <clusterName>           |
+|vs         |add Visual Studio tools to the path                            |
 
 Before I can use my customized PowerShell, I must install the following modules:
 

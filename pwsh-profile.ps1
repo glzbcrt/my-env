@@ -92,6 +92,12 @@ Function kcreds {
     az aks get-credentials -g $ResourceGroup -n $KubernetesCluster --overwrite-existing
 }
 
+# Load Visual Studio 2022 environment.
+Function vs {
+    Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"    
+    Enter-VsDevShell -VsInstanceId 933f0d0b -Arch amd64 -HostArch amd64
+}
+
 # CTRL+B: open the current directory in Explorer.
 Set-PSReadLineKeyHandler -Chord Ctrl+b -ScriptBlock {
     "explorer.exe $pwd" | Invoke-Expression
