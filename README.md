@@ -204,6 +204,15 @@ These are the environment variables I have defined to customize my environment.
 |HF_DATASETS_CACHE          |datasets dir path                                              |Directory where the Hugging Face datasets lib will save the downloaded datasets.          |
 |_NT_SYMBOL_PATH            |check the section *Debugging Symbols*                          |Path where tools like WinDbg, and NVIDIA Nsight can find debugging symbols on Windows.    |
 
+## Linux Configuration
+
+The [install.sh](./install.sh) script (one-liner command below) can be used to configure a Linux distribution the way I like. Right now only Ubuntu is supported.
+
+```bash
+wget -O - https://raw.githubusercontent.com/glzbcrt/my-env/main/install.sh | bash
+```
+
+
 ## Debugging Symbols
 
 I love debugging, and all the low level stuff we need to know to do that. For a successfully debugging session we need the debugging symbols (PDB files on Windows) generated during the build process. Microsoft publishes symbols for their software, and other companies are also doing that.
