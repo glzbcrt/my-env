@@ -1,0 +1,13 @@
+Title=glzbcrt tools
+Overwrite=1
+Path=C:\bla
+Text
+{
+This package contains a comprehensive tools selection that brings together several open-source tools. 
+ 
+
+It is a curated collection of powerful utilities designed to enhance productivity and streamline workflows, specially for reverse engineering and malware analysis.
+    
+
+Please note that the copyright for each tool within this package belongs to the respective owners and contributors. All credit and recognition are due to the original developers for their valuable work in creating these tools.
+}

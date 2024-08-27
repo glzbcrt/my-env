@@ -212,6 +212,15 @@ The [install.sh](./install.sh) script (one-liner command below) can be used to c
 wget -O - https://raw.githubusercontent.com/glzbcrt/my-env/main/install.sh | bash
 ```
 
+## Reverse Engineering + Malware Analysis Tools
+
+I have created a curated package of several open source tools that can be used to do reverse engineering, malware analysis, and others. You can download the package [here](https://bit.ly/glzbcrt-tools).
+It is a self-extracing RAR file I created using this file [here](./my-tools.winrarsfx).
+
+This package was created to speed-up the process of creating a lab environment for analysis of malware and reverse engineering.
+
+As far as I know all tools are free from malware, at least my anti-virus didn't report any issue with them, but use at your own risk. There are not any pirate software in this package, all tools are free, and I download them directly from the owners websites.
+
 
 ## Debugging Symbols
 
