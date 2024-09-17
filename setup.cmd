@@ -14,8 +14,9 @@ md %USERPROFILE%\Documents\PowerShell > NUL
 call :create-link "%USERPROFILE%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" %CD%\pwsh-profile.ps1
 echo.
 
-rem used by PowerShell profile to load Oh My Posh later.
+rem used by PowerShell profile script to load Oh My Posh and find my toolbox later.
 setx MY_ENV %CD%
+setx MY_TOOLBOX %CD%\..\toolbox
 
 echo - installing PowerShell...
 winget install Microsoft.PowerShell
