@@ -204,6 +204,16 @@ These are the environment variables I have defined to customize my environment.
 |HF_DATASETS_CACHE          |datasets dir path                                              |Directory where the Hugging Face datasets lib will save the downloaded datasets.          |
 |_NT_SYMBOL_PATH            |check the section *Debugging Symbols*                          |Path where tools like WinDbg, and NVIDIA Nsight can find debugging symbols on Windows.    |
 
+
+## Docker
+
+Quickly access the Docker volumes from Windows Explorer creating a symbolic link to the location where they are stored using the command line below.
+It needs to be executed as administrator.
+
+```powershell
+New-Item -ItemType SymbolicLink -Path "c:\dockervols" -Target "\\wsl.localhost\docker-desktop\tmp\docker-desktop-root\var\lib\docker\volumes"
+```
+
 ## Linux Configuration
 
 The [install.sh](./install.sh) script (one-liner command below) can be used to configure a Linux distribution the way I like. Right now only Ubuntu is supported.
