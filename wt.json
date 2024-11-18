@@ -71,8 +71,8 @@
         "defaults": {
             "cursorShape": "filledBox",
             "font": {
-                "face": "CaskaydiaCove Nerd Font Mono",
-                "size": 13.0
+                "face": "CodeNewRoman Nerd Font Mono",
+                "size": 14
             },
             "historySize": 32767
         },
