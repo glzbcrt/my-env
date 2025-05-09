@@ -6,7 +6,7 @@
 $programs = @(
     @{
         name  = "ida"
-        path  = "$env:MY_TOOLBOX\ida\ida64.exe"
+        path  = "$env:MY_TOOLBOX\ida9\ida.exe"
         types = @("exefile", "dllfile", "sysfile")
     }
     @{
@@ -34,13 +34,13 @@ $programs = @(
         path  = "$env:MY_TOOLBOX\imhex\imhex.exe"
         types = @("*")
     }  
-    @{
-        name  = "vscode"
+    # @{
+    #     name  = "vscode"
 
-        #  TODO: need to fix the path where VS Code is installed. Install for all users?
-        path  = "C:\Users\glzbcrt\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-        types = @("*", "Directory", "Directory\Background||%v")
-    }       
+    #     #  TODO: need to fix the path where VS Code is installed. Install for all users?
+    #     path  = "C:\Users\glzbcrt\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+    #     types = @("*", "Directory", "Directory\Background||%v")
+    # }       
 )
 
 $programs | ForEach-Object {    

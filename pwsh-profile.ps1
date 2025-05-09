@@ -1,4 +1,3 @@
-
 # Load the Terminal icons module.
 Import-Module -Name Terminal-Icons
 
@@ -22,6 +21,45 @@ Set-Alias -Name l -Value Get-ChildItem
 Set-Alias -Name ll -Value Get-ChildItem
 Set-Alias -Name kctx -Value kubectx
 Set-Alias -Name kns -Value kubens
+Set-Alias -Name ida -Value "$env:MY_TOOLBOX\ida\ida64.exe"
+Set-Alias -Name die -Value "$env:MY_TOOLBOX\die\die.exe"
+Set-Alias -Name pestudio -Value "$env:MY_TOOLBOX\pestudio\pestudio.exe"
+
+# Use this function to create a debug pod using the Azure CLI image.
+Function kdbgp {
+    param(
+        [string] $Node
+    )
+
+    if ($Node -ne "") {
+        $NodeSelector = @{
+            "spec" = @{
+                "nodeSelector" = @{
+                    "kubernetes.io/hostname" = $Node
+                }
+            }
+        }
+        
+        $NodeSelectorString = $NodeSelector | ConvertTo-Json -Compress        
+        kubectl run -i --tty --rm (New-Guid) --image=mcr.microsoft.com/azure-cli --overrides=$NodeSelectorString
+    }
+    else {
+        kubectl run -i --tty --rm (New-Guid) --image=mcr.microsoft.com/azure-cli
+    }
+}
+
+Function kdbgn {
+    param(
+        [string] $Node
+    )
+
+    if ($Node -eq "") {
+        Write-Error "node name must be provided. Use kubectl get nodes to list them."
+        return
+    }
+
+    kubectl debug node/$Node -it --image=mcr.microsoft.com/azure-cli    
+}
 
 # Use this function to clone a repository quickly.
 Function gcl {
@@ -95,7 +133,7 @@ Function kcreds {
 # Load Visual Studio 2022 environment.
 Function vs {
     Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"    
-    Enter-VsDevShell -VsInstanceId 933f0d0b -Arch amd64 -HostArch amd64
+    Enter-VsDevShell -VsInstanceId 698d223e -Arch amd64 -HostArch amd64
 }
 
 # CTRL+B: open the current directory in Explorer.

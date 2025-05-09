@@ -231,6 +231,16 @@ This package was created to speed-up the process of creating a lab environment f
 
 As far as I know all tools are free from malware, at least my anti-virus didn't report any issue with them, but use at your own risk. There are not any pirate software in this package, all tools are free, and I download them directly from the owners websites.
 
+I like to see the _opcodes_ in [IDA](https://hex-rays.com/ida-free/), and to not have to enable it every single time, edit the file [ida.cfg](https://hex-rays.com/products/ida/support/idadoc/419.shtml) and change the setting [OPCODE_BYTES](https://hex-rays.com/blog/igors-tip-of-the-week-123-opcode-bytes/) to **16**.
+
+## Sysmon
+
+I am using [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) to monitor my machine for suspicious activity, and I am using the  configuration file [sysmon.xml](./sysmon.xml).
+To install Sysmon using this configuration file use the following command.
+
+```batch
+sysmon.exe -accepteula -i sysmon.xml
+```
 
 ## Debugging Symbols
 
