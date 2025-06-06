@@ -147,3 +147,16 @@ Set-PSReadLineKeyHandler -Chord Ctrl+g -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("cd $env:DEV_ROOT\projects")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+
+Function aienvs {
+    $env:OPENAI_API_KEY = (op read "op://Private/My OpenAI Credentials/notesPlain")
+
+    $env:AZURE_OPENAI_API_KEY = (op read "op://Private/My Azure OpenAI Credentials/apiKeyPlain")
+    $env:AZURE_OPENAI_ENDPOINT = (op read "op://Private/My Azure OpenAI Credentials/endpointPlain")
+
+    $env:ANTHROPIC_API_KEY = (op read "op://Private/My Anthropic Credentials/notesPlain")
+
+    $env:HF_TOKEN = (op read "op://Private/My Hugging Face Credentials/notesPlain")
+}
+
+op completion powershell | Out-String | Invoke-Expression

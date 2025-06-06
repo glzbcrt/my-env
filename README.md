@@ -72,6 +72,7 @@ winget install Neovim.Neovim
 winget install RARLab.WinRAR
 winget install Microsoft.VisualStudioCode
 winget install AgileBits.1Password
+winget install 1password-cli
 winget install WhatsApp.WhatsApp
 winget install HHDSoftware.FreeHexEditorNeo
 winget install Adobe.Acrobat.Reader.64-bit
