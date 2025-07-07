@@ -148,6 +148,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+g -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
+# Define my AI model providers environment variables reading directly from 1Password.
 Function aienvs {
     $env:OPENAI_API_KEY = (op read "op://Private/My OpenAI Credentials/notesPlain")
 
@@ -160,3 +161,9 @@ Function aienvs {
 }
 
 op completion powershell | Out-String | Invoke-Expression
+
+# Create a Python virtual environment in the current directory using uv.
+Function pvenv {
+    uv venv
+    .venv\Scripts\activate
+}
