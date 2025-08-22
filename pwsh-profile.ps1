@@ -166,6 +166,29 @@ op completion powershell | Out-String | Invoke-Expression
 
 # Create a Python virtual environment in the current directory using uv.
 Function pvenv {
+    param(
+        [string] $Path
+    )
+
+    if ($Path -ne "") {
+        try {
+            if (-not (Test-Path -LiteralPath $Path)) {
+                New-Item -Path $Path -ItemType Directory -Force | Out-Null
+            }
+            elseif (-not (Test-Path -LiteralPath $Path -PathType Container)) {
+                Write-Error "Path '$Path' exists and is not a directory."
+                return
+            }
+
+            Set-Location -LiteralPath $Path
+        }
+        catch {
+            Write-Error "Failed to create or change to directory '$Path': $_"
+            return
+        }
+    }
+
     uv venv --seed
+    uv init
     .venv\Scripts\activate
 }
