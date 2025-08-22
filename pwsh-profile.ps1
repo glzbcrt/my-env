@@ -158,12 +158,14 @@ Function aienvs {
     $env:ANTHROPIC_API_KEY = (op read "op://Private/My Anthropic Credentials/notesPlain")
 
     $env:HF_TOKEN = (op read "op://Private/My Hugging Face Credentials/notesPlain")
+
+    $env:GEMINI_API_KEY = (op read "op://Private/My Gemini Credentials/notesPlain")
 }
 
 op completion powershell | Out-String | Invoke-Expression
 
 # Create a Python virtual environment in the current directory using uv.
 Function pvenv {
-    uv venv
+    uv venv --seed
     .venv\Scripts\activate
 }
