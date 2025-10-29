@@ -1,0 +1,24 @@
+# Ensure PNG files are treated as binary and not modified by Git
+*.png binary
+
+# Additional image formats that should also be treated as binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.svg binary
+*.webp binary
+*.tiff binary
+*.tif binary
+
+# Prevent any text processing, line ending conversion, or diff attempts
+*.png -text -diff
+*.jpg -text -diff
+*.jpeg -text -diff
+*.gif -text -diff
+*.bmp -text -diff
+*.ico -text -diff
+*.webp -text -diff
+*.tiff -text -diff
+*.tif -text -diff
