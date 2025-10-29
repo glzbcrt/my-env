@@ -42,6 +42,13 @@ The Windows features below are the **only** ones I have enabled.
 - Windows Sandbox (take a look at the _downloads.wsb_ file for a sample sandbox)
 - Windows Subsystem for Linux
 
+## Windows Developer Features
+
+Always enable the following developer features on Windows:
+
+- End Task
+- Enable sudo
+
 ## Winget
 
 I use [winget](https://github.com/microsoft/winget-cli) to install most of my applications. Below, you can find the ones I use formatted as command line ready for use. They are  grouped by subject.
@@ -401,3 +408,4 @@ The table below shows all my extensions I use organized by type and profile.
 I hope you got here and enjoyed it! As I told you in the beginning, this is a work in progress, so I will be updating it from time to time to reflect the changes I applied.
 
 Thanks!
+
